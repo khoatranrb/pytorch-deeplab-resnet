@@ -57,25 +57,25 @@ class Bottleneck(nn.Module):
         super(Bottleneck, self).__init__()
         self.conv1 = nn.Conv2d(inplanes, planes, kernel_size=1, stride=stride, bias=False) # change
         self.bn1 = nn.BatchNorm2d(planes,affine = affine_par)
-	for i in self.bn1.parameters():
+        for i in self.bn1.parameters():
             i.requires_grad = False
-        padding = 1
-        if dilation_ == 2:
-	    padding = 2
-        elif dilation_ == 4:
-	    padding = 4
-        self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=1, # change
-                               padding=padding, bias=False, dilation = dilation_)
-        self.bn2 = nn.BatchNorm2d(planes,affine = affine_par)
-        for i in self.bn2.parameters():
-            i.requires_grad = False
-        self.conv3 = nn.Conv2d(planes, planes * 4, kernel_size=1, bias=False)
-        self.bn3 = nn.BatchNorm2d(planes * 4, affine = affine_par)
-        for i in self.bn3.parameters():
-            i.requires_grad = False
-        self.relu = nn.ReLU(inplace=True)
-        self.downsample = downsample
-        self.stride = stride
+            padding = 1
+            if dilation_ == 2:
+                padding = 2
+            elif dilation_ == 4:
+                padding = 4
+            self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=1, # change
+                                padding=padding, bias=False, dilation = dilation_)
+            self.bn2 = nn.BatchNorm2d(planes,affine = affine_par)
+            for i in self.bn2.parameters():
+                i.requires_grad = False
+            self.conv3 = nn.Conv2d(planes, planes * 4, kernel_size=1, bias=False)
+            self.bn3 = nn.BatchNorm2d(planes * 4, affine = affine_par)
+            for i in self.bn3.parameters():
+                i.requires_grad = False
+            self.relu = nn.ReLU(inplace=True)
+            self.downsample = downsample
+            self.stride = stride
 
 
 
