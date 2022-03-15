@@ -59,7 +59,7 @@ def read_file(path_to_file):
     return img_list
 
 def chunker(seq, size):
- return (seq[pos:pos+size] for pos in xrange(0,len(seq), size))
+ return (seq[pos:pos+size] for pos in range(0,len(seq), size))
 
 def resize_label_batch(label, size):
     label_resized = np.zeros((size,size,1,label.shape[3]))
