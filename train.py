@@ -181,7 +181,7 @@ if not os.path.exists('data/snapshots'):
 
 model = deeplab_resnet.Res_Deeplab(int(args['--NoLabels']))
 
-saved_state_dict = torch.load('data/MS_DeepLab_resnet_pretrained_COCO_init.pth')
+# saved_state_dict = torch.load('data/MS_DeepLab_resnet_pretrained_COCO_init.pth')
 if int(args['--NoLabels'])!=21:
     for i in saved_state_dict:
         #Scale.layer5.conv2d_list.3.weight
