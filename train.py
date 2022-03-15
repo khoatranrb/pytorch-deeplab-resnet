@@ -237,8 +237,8 @@ for iter in range(max_iter+1):
         optimizer = optim.SGD([{'params': get_1x_lr_params_NOscale(model), 'lr': lr_ }, {'params': get_10x_lr_params(model), 'lr': 10*lr_} ], lr = lr_, momentum = 0.9,weight_decay = weight_decay)
         optimizer.zero_grad()
 
-    if iter % 1000 == 0 and iter!=0:
-        print 'taking snapshot ...'
-        torch.save(model.state_dict(),'data/snapshots/VOC12_scenes_'+str(iter)+'.pth')
+#     if iter % 1000 == 0 and iter!=0:
+#         print 'taking snapshot ...'
+#         torch.save(model.state_dict(),'data/snapshots/VOC12_scenes_'+str(iter)+'.pth')
 end = timeit.timeit()
-print 'time taken ', end-start
+print ('time taken ', end-start)
