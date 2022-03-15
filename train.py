@@ -189,7 +189,7 @@ if int(args['--NoLabels'])!=21:
         if i_parts[1]=='layer5':
             saved_state_dict[i] = model.state_dict()[i]
 
-model.load_state_dict(saved_state_dict)
+# model.load_state_dict(saved_state_dict)
 
 max_iter = int(args['--maxIter']) 
 batch_size = 1
